@@ -11,6 +11,7 @@ const ExplanationForm = ({addExplanation}) => {
     const handleAddExplanation = (event) => {
         event.preventDefault()
         addExplanation(explanationContent)
+        console.log(`Adding explanation: ${explanationContent}`)
         setExplanationContent("")
     }
 

@@ -5,11 +5,13 @@ import ExplanationForm from "./components/ExplanationForm";
 import Explanations from "./components/Explanations";
 import InfoRow from "./components/InfoRow";
 import SwitchRoleButton from "./components/SwitchRoleButton";
+import Notification from "./components/Notification";
 
 function App() {
   const [name, setName] = useState("")
   const [explanations, setExplanations] = useState([])
   const [hamy, setHamy] = useState(false)
+  const [notificationMessage, setNotificationMessage] = useState(null)
 
   useEffect(() => {
     rappakaljaService.getExplanations().then(explanations =>
@@ -33,6 +35,8 @@ function App() {
       }
       rappakaljaService.addExplanation(explanation)
       setExplanations(explanations.concat(explanation))
+      showNotification("Selitys lähetetty!")
+
     } catch (exception) {
       console.log(exception)
     }
@@ -42,6 +46,11 @@ function App() {
     rappakaljaService.getExplanations().then(explanations =>
       setExplanations( explanations )
     )  
+  }
+
+  const showNotification = (message) => {
+    setNotificationMessage(message)
+    setTimeout(() => setNotificationMessage(null), 5000)
   }
 
   if (name === "") {
@@ -60,6 +69,7 @@ function App() {
       <SwitchRoleButton hamy={hamy} setHamy={setHamy} />
       <br/><br/>
       <ExplanationForm addExplanation={addExplanation} />
+      <Notification message={notificationMessage} />
       <Explanations hamy={hamy} updateExplanations={updateExplanations} explanations={explanations} />
     </div>
   )
