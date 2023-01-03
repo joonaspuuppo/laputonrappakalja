@@ -34,7 +34,15 @@ function App() {
         player: name
       }
       rappakaljaService.addExplanation(explanation)
-      setExplanations(explanations.concat(explanation))
+
+      if (explanations.map(e => e.player).includes(explanation.player)) {
+        setExplanations(explanations.map(e => {
+          if (e.player === explanation.player) {
+            return {content: explanationContent, player: e.player}
+          } else return e
+        }))
+      } else setExplanations(explanations.concat(explanation))
+      
       showNotification("Selitys lähetetty!")
 
     } catch (exception) {
