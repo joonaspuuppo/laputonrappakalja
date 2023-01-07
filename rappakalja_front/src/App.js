@@ -6,6 +6,7 @@ import Explanations from "./components/Explanations";
 import InfoRow from "./components/InfoRow";
 import SwitchRoleButton from "./components/SwitchRoleButton";
 import Notification from "./components/Notification";
+import NumberPicker from "./components/NumberPicker";
 
 function App() {
   const [name, setName] = useState("")
@@ -75,7 +76,7 @@ function App() {
       <h1>Rappakalja</h1>
       <InfoRow hamy={hamy} name={name} />
       <SwitchRoleButton hamy={hamy} setHamy={setHamy} />
-      <br/><br/>
+      <NumberPicker hamy={hamy} />
       <ExplanationForm addExplanation={addExplanation} />
       <Notification message={notificationMessage} />
       <Explanations hamy={hamy} updateExplanations={updateExplanations} explanations={explanations} />
