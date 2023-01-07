@@ -3,7 +3,7 @@ const explanationsRouter = require("express").Router()
 let explanations = []
 
 explanationsRouter.get("/", (request, response) => {
-    response.json(explanations)
+    response.json(explanations.sort(() => Math.random() - 0.5))
 })
 
 explanationsRouter.post("/", (request, response) => {
