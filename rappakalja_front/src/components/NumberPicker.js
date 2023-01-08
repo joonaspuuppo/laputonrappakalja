@@ -16,7 +16,7 @@ const NumberPicker = ({hamy}) => {
     if (!hamy) return null
 
     return (
-        <div>
+        <div id="numberPicker">
             <button onClick={pickNumber} id="generateNumberButton">Arvo numero</button>
             <p id="generatedNumber">{number}</p>
         </div>

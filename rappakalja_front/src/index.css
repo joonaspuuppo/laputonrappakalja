@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 2em;
+  padding: 1em;
   text-align: center;
   background-color: rgb(30, 30, 60);
   color: white;
@@ -81,22 +81,33 @@ form button {
   color: gray;
 }
 
-#generateNumberButton {
+#numberPicker {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 2em;
+}
+
+#generateNumberButton {
+  
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  
+  font-size: 1em;
+  margin: 0;
 }
 
 #generatedNumber {
-  background-color: black;
-  padding: 0.7em 1em;
-  border: 3px solid black;
-  display: inline;
-  position: relative;
-  top: 2px;
+  margin: 0;
+  font-size: 1em;
+  background-color: rgb(44, 44, 86);
+  border: 3px solid white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   color: rgb(169, 169, 169);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
 }
 
