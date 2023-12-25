@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/player/658944486561f41a53c6505f/points
+POST http://localhost:3001/api/players/658944486561f41a53c6505f/points
 Content-Type: application/json
 
 {

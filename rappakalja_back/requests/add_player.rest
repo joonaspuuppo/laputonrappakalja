@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/game/new-player
+POST http://localhost:3001/api/games/new-player
 Content-Type: application/json
 
  {

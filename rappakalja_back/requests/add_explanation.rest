@@ -1,0 +1,6 @@
+POST http://localhost:3001/api/players/658944486561f41a53c6505f/explanations
+Content-Type: application/json
+
+{
+    "explanation": "testi123"
+}

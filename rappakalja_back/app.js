@@ -20,8 +20,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use(cors())
 app.use(express.json())
-app.use("/api/game", gameRouter)
-app.use("/api/player", playerRouter)
+app.use("/api/games", gameRouter)
+app.use("/api/players", playerRouter)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 

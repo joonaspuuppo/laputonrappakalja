@@ -1,4 +1,4 @@
-GET http://localhost:3001/api/game/game
+GET http://localhost:3001/api/games/game
 Content-Type: application/json
 
 {

@@ -7,7 +7,7 @@ const playerSchema = mongoose.Schema({
         ref: "Game"
     },
     points: { type: Number, required: true, min: 0},
-    definition: String,
+    explanation: String,
 })
 
 playerSchema.set("toJSON", {
