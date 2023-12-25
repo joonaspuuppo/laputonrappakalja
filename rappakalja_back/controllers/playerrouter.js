@@ -15,8 +15,8 @@ playerRouter.get("/", async (request, response) => {
 
 playerRouter.post("/:id/definitions", async (request, response, next) => {
     try {
-        const definition = request.body
-        const updatedPlayer = await Player.findByIdAndUpdate(request.params.id, {definition: request.body.content}, {new: true})
+        const definition = request.body.definition
+        const updatedPlayer = await Player.findByIdAndUpdate(request.params.id, {definition: definition}, {new: true})
         response.json(updatedPlayer)
     } catch (exception) {
         next(exception)

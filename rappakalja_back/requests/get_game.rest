@@ -1,0 +1,6 @@
+GET http://localhost:3001/api/game/game
+Content-Type: application/json
+
+{
+    "name": "Rappakalja"
+}

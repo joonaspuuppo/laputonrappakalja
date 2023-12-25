@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/game/new-player
+Content-Type: application/json
+
+ {
+    "player": "Jeremias",
+    "game": "Rappakalja"
+ }
