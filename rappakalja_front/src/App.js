@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import rappakaljaService from "./services/rappakalja"
+import { useSelector, useDispatch } from 'react-redux'
+import { addPlayer } from "./services/rappakalja"
 import NameForm from "./components/NameForm";
 import ExplanationForm from "./components/ExplanationForm";
 import Explanations from "./components/Explanations";
@@ -9,24 +10,16 @@ import Notification from "./components/Notification";
 import NumberPicker from "./components/NumberPicker";
 
 function App() {
-  const [name, setName] = useState("")
-  const [explanations, setExplanations] = useState([])
+  const player = useSelector(state => state.player)
+  const game = useSelector(state => state.game)
+  const dispatch = useDispatch()
+
   const [hamy, setHamy] = useState(false)
   const [notificationMessage, setNotificationMessage] = useState(null)
 
   useEffect(() => {
-    rappakaljaService.getExplanations().then(explanations =>
-      setExplanations( explanations )
-    )  
-  }, [])
-
-  const addPlayer = (name) => {
-    try {
-      setName(name)
-    } catch (exception) {
-      console.log(exception)
-    }
-  }
+    dispatch()
+  }, [game])
 
   const addExplanation = (explanationContent) => {
     try {
